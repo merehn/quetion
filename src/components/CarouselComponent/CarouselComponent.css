@@ -1,0 +1,67 @@
+/* CarouselComponent.css */
+
+/* إعدادات نص الـ Overlay */
+.carousel-text-overlay {
+  position: absolute;
+  top: 70%; /* يضبط الموقع العمودي */
+  left: 40px; /* يضع النص على الجانب الأيسر */
+  transform: translateY(-50%);
+  color: rgba(135, 214, 159, 0.8); /* يجعل النص شفافًا بشكل بسيط */
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* يضيف ظل للنص */
+  border: 1px solid rgba(204, 243, 216, 0.8); /* يضيف حدود شفافة */
+  border-radius: 50px;
+  padding: 10px 15px;
+  background-color: transparent;
+}
+
+/* إعدادات النص للرابط داخل الـ Overlay */
+.carousel-text-overlay a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* إعدادات الصورة داخل الـ Carousel */
+.carousel-image {
+  object-fit: cover;
+  height: 100vh; /* يأخذ كامل ارتفاع نافذة العرض */
+}
+
+/* الـ Media Queries لضبط شكل المكون على شاشات العرض المختلفة */
+@media (max-width: 768px) {
+  .carousel-text-overlay {
+    font-size: 1.5rem; /* يصغر حجم النص للعرض على الشاشات الأصغر */
+    left: 20px; /* يقلل من المسافة من الجانب الأيسر */
+    padding: 8px 12px; /* يقلل الحشو داخل الحدود */
+  }
+
+  .carousel-image {
+    height: 70vh; /* يقلل من ارتفاع الصور لتناسب الشاشات الأصغر */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-text-overlay {
+    font-size: 1.2rem; /* يصغر حجم النص بشكل أكبر للشاشات الصغيرة */
+    left: 10px; /* يقلل المسافة أكثر من الجانب الأيسر */
+    padding: 5px 8px; /* يقلل الحشو بشكل أكبر */
+  }
+
+  .carousel-image {
+    height: 60vh; /* يقلل ارتفاع الصور أكثر للشاشات الصغيرة */
+  }
+}
+
+/* لضبط العرض على الشاشات الكبيرة مثل تلك التي في الصورة */
+@media (min-width: 1080px) {
+  .carousel-text-overlay {
+    font-size: 2.5rem; /* يكبر حجم النص للشاشات الكبيرة */
+    left: 50px; /* يزيد من المسافة من الجانب الأيسر */
+  }
+
+  .carousel-image {
+    height: 90vh; /* يجعل الصور تأخذ ارتفاع 90% من النافذة */
+  }
+}

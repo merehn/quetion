@@ -1,0 +1,23 @@
+/* Footer.css */
+
+/* إعدادات الـ footer العامة */
+footer {
+    background-color: green; /* لون الخلفية */
+    color: white; /* لون النص */
+    text-align: center; /* توسيط النص داخل الـ footer */
+    padding: 15px 0; /* إضافة padding من الأعلى والأسفل */
+    font-size: 1.2rem; /* حجم النص */
+    position: fixed; /* تثبيت الـ footer في الأسفل */
+    bottom: 0;
+    width: 100%; /* أخذ عرض الصفحة بالكامل */
+    z-index: 1000; /* التأكد من أن الـ footer يظهر فوق أي عناصر أخرى */
+  }
+  
+  /* تعديل الاستجابة للشاشات الصغيرة */
+  @media (max-width: 768px) {
+    footer {
+      font-size: 1rem; /* تصغير حجم النص للشاشات الصغيرة */
+      padding: 10px 0; /* تقليل المسافة الداخلية للـ footer */
+    }
+  }
+  

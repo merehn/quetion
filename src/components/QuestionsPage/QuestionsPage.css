@@ -1,0 +1,107 @@
+/* QuestionsPage.css */
+
+/* إعدادات الصفحة بشكل عام */
+.questions-page {
+  font-family: 'Amiri', serif; /* تطبيق الخط العربي التقليدي */
+  background-image: url('../../../public/image.jpg'); /* رابط الصورة الخلفية */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* إضافة الـ overlay لتغميق الخلفية */
+.overlay {
+  background: rgba(0, 0, 0, 0.6); /* Overlay نصف شفاف */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* تنسيق وعرض السؤال والاختيارات */
+.question-container {
+  background: rgba(245, 243, 243, 0.2); /* خلفية بيضاء شفافة قليلاً */
+  border-radius: 15px;
+  max-width: 600px;
+  color: #fff;
+  width: 90%;
+  padding: 20px; /* إضافة padding داخل المكون */
+}
+
+/* إعدادات العناصر داخل القائمة */
+.list-group-item {
+  background: rgba(216, 183, 183, 0.4); /* خلفية شفافة قليلاً */
+  border: 1px solid #ddd;
+  color: #fff;
+  transition: background 0.3s; /* إضافة تأثير عند التحويم */
+  cursor: pointer; /* تغيير مؤشر الفأرة عند التحويم */
+}
+
+/* تأثير التحويم */
+.list-group-item:hover {
+  background: #3ff567;
+}
+
+/* تنسيق العنصر النشط */
+.list-group-item.active {
+  background: #6e815b;
+  color: white;
+}
+
+/* إعدادات الرسالة الارتجاعية */
+.feedback-message {
+  font-size: 1.5rem;
+  color: #fa0d0d;
+}
+
+/* التعديلات الاستجابية للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .question-container {
+    padding: 15px; /* تقليل المسافة الداخلية للشاشات الأصغر */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* تصغير حجم النص للعنوان */
+  }
+
+  .list-group-item {
+    font-size: 1rem; /* تصغير حجم النص في الخيارات */
+    padding: 10px; /* تقليل الـ padding داخل الخيارات */
+  }
+}
+
+@media (max-width: 480px) {
+  .question-container {
+    padding: 10px; /* تقليل المسافة الداخلية للشاشات الأصغر */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* تصغير حجم النص للعنوان */
+  }
+
+  .list-group-item {
+    font-size: 0.9rem; /* تصغير حجم النص في الخيارات */
+    padding: 8px; /* تقليل الـ padding داخل الخيارات */
+  }
+}
+
+/* التعديلات للشاشات الكبيرة */
+@media (min-width: 1080px) {
+  .question-container {
+    padding: 30px; /* زيادة المسافة الداخلية للشاشات الكبيرة */
+  }
+
+  h2 {
+    font-size: 2rem; /* تكبير حجم النص للعنوان */
+  }
+
+  .list-group-item {
+    font-size: 1.2rem; /* تكبير حجم النص في الخيارات */
+    padding: 15px; /* زيادة الـ padding داخل الخيارات */
+  }
+}

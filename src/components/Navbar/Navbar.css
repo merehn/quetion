@@ -1,0 +1,6 @@
+.navbar-brand {
+  text-align: center; /* يضمن أن يتم توسيط النص ضمن الحاوية */
+  width: 100%; /* يجعل عرض العنصر 100% للتوسيط */
+  display: flex; /* استخدم flexbox */
+  justify-content: center; /* توسيط العنصر داخليًا */
+}
