@@ -109,6 +109,14 @@ const QuestionsPage = () => {
       return;
     }
 
+    // Check if all questions have been answered correctly
+    if (correctAnswers.length + 1 === questions.length) {
+      setMessage('مبروك! لقد أجبت على جميع الأسئلة بشكل صحيح!');
+      setMessageType('congratulations');
+      setQuizFinished(true);
+      return;
+    }
+
     setTimeout(() => {
       setSelectedAnswer(null);
       if (currentQuestionIndex < questions.length - 1) {
@@ -130,7 +138,7 @@ const QuestionsPage = () => {
       {quizFinished ? (
         <div className="overlay d-flex align-items-center justify-content-center">
           <div className="feedback-message mt-4 text-center">
-            {consolation ? 'لا بأس، لقد أخطأت. حاول مرة أخرى في المرة القادمة!' : 'لقد انتهيت من جميع الأسئلة! شكراً لمشاركتك!'}
+            {consolation ? 'لا بأس، لقد أخطأت. حاول مرة أخرى في المرة القادمة!' : message}
             <br />
             <button
               id="return-home-button"

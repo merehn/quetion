@@ -66,6 +66,10 @@
 
 
 
+.feedback-message.congratulations {
+  color: green;
+  font-weight: bold;
+}
 
 
 .list-group-item.correct {
