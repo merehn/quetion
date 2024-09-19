@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './QuestionsPage.css'; // Import custom styles
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 const QuestionsPage = () => {
+  const navigate = useNavigate(); // Initialize useNavigate for navigation
+
   const questions = [
     {
       question: "ما هو تاريخ اليوم الذي تحتفل المملكة به تحت مسمى اليوم الوطني؟",
@@ -84,15 +87,21 @@ const QuestionsPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
   const [quizFinished, setQuizFinished] = useState(false);
   const [consolation, setConsolation] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState([]);
 
-  // Handle answer selection and show feedback
   const handleAnswerSelection = (index) => {
     setSelectedAnswer(index);
 
     const isCorrect = index === questions[currentQuestionIndex].correct;
     setMessage(isCorrect ? 'إجابة صحيحة! أحسنت!' : 'إجابة خاطئة! حاول مرة أخرى!');
+    setMessageType(isCorrect ? 'correct' : 'incorrect');
+
+    if (isCorrect) {
+      setCorrectAnswers(prev => [...prev, currentQuestionIndex]);
+    }
 
     if (!isCorrect) {
       setConsolation(true);
@@ -110,14 +119,26 @@ const QuestionsPage = () => {
     }, 2000);
   };
 
+  const handleReturnHome = () => {
+    navigate('/'); // Navigate to the home page
+  };
+
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
     <div className="questions-page">
       {quizFinished ? (
         <div className="overlay d-flex align-items-center justify-content-center">
-          <div className="feedback-message mt-4">
+          <div className="feedback-message mt-4 text-center">
             {consolation ? 'لا بأس، لقد أخطأت. حاول مرة أخرى في المرة القادمة!' : 'لقد انتهيت من جميع الأسئلة! شكراً لمشاركتك!'}
+            <br />
+            <button
+              id="return-home-button"
+              className="btn btn-primary mt-3"
+              onClick={handleReturnHome}
+            >
+              العودة إلى الصفحة الرئيسية
+            </button>
           </div>
         </div>
       ) : (
@@ -128,7 +149,7 @@ const QuestionsPage = () => {
               {currentQuestion.answers.map((answer, index) => (
                 <li
                   key={index}
-                  className={`list-group-item ${selectedAnswer === index ? 'active' : ''}`}
+                  className={`list-group-item ${selectedAnswer === index ? (index === currentQuestion.correct ? 'correct' : 'incorrect') : ''} ${correctAnswers.includes(currentQuestionIndex) && index === currentQuestion.correct ? 'correct' : ''}`}
                   onClick={() => handleAnswerSelection(index)}
                   style={{ cursor: 'pointer' }}
                 >
@@ -136,12 +157,14 @@ const QuestionsPage = () => {
                 </li>
               ))}
             </ul>
-            {message && <div className="feedback-message mt-4">{message}</div>}
+            {message && (
+              <div className={`feedback-message mt-4 ${messageType}`}>
+                {message}
+              </div>
+            )}
           </div>
         </div>
       )}
-
-     
     </div>
   );
 };

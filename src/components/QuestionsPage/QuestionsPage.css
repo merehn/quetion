@@ -41,9 +41,9 @@
   cursor: pointer;
 }
 
-.list-group-item:hover {
+/* .list-group-item:hover {
   background: #3ff567;
-}
+} */
 
 .list-group-item.active {
   background: #6e815b;
@@ -54,7 +54,43 @@
 .feedback-message {
   font-size: 1.5rem;
   color: #fa0d0d;
+
 }
+.feedback-message.correct {
+  color: green !important;
+}
+
+.feedback-message.incorrect {
+  color: red !important;
+}
+
+
+
+
+
+.list-group-item.correct {
+  background-color: lightgreen; /* Color for the correct answer */
+  color: green;
+}
+
+.list-group-item.incorrect {
+  background-color: lightcoral; /* Color for the incorrect answer */
+  color: red;
+}
+
+.feedback-message {
+  font-size: 1.2rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.feedback-message.correct {
+  color: green; /* Green color for correct answers */
+}
+
+.feedback-message.incorrect {
+  color: red; /* Red color for incorrect answers */
+}
+
 
 /* Footer styling */
 .footer {
@@ -94,6 +130,18 @@
     font-size: 1.8rem;
   }
 }
+#return-home-button {
+  background-color: green; /* Change button background color to green */
+  border: none; /* Remove button border */
+  color: white; /* Set text color to white */
+ align-items: center;
+  margin-top: 20px; /* Add some space above the button */
+}
+
+#return-home-button:hover {
+  background-color: rgb(8, 27, 8); /* Darken the button color on hover */
+}
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
