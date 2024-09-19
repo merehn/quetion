@@ -1,11 +1,10 @@
 import React from 'react';
 import { Navbar, Container } from 'react-bootstrap';
-import './Navbar.css'; // تأكد من إنشاء هذا الملف واستيراده بشكل صحيح
+import './Navbar.css'; // Make sure this file is imported correctly
 
 const NavbarComponent = () => (
-  <Navbar style={{ backgroundColor: 'green' }} variant="dark" expand="lg">
+  <Navbar style={{ backgroundColor: 'green',  }} variant="dark" expand="lg">
     <Container fluid className="d-flex justify-content-center">
-      {/* Centered text */}
       <Navbar.Brand className="text-white navbar-brand" href="/">
         المملكة العربية السعودية
       </Navbar.Brand>

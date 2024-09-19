@@ -1,23 +1,31 @@
-/* Footer.css */
-
-/* إعدادات الـ footer العامة */
+/* General footer settings */
 footer {
-    background-color: green; /* لون الخلفية */
-    color: white; /* لون النص */
-    text-align: center; /* توسيط النص داخل الـ footer */
-    padding: 15px 0; /* إضافة padding من الأعلى والأسفل */
-    font-size: 1.2rem; /* حجم النص */
-    position: fixed; /* تثبيت الـ footer في الأسفل */
-    bottom: 0;
-    width: 100%; /* أخذ عرض الصفحة بالكامل */
-    z-index: 1000; /* التأكد من أن الـ footer يظهر فوق أي عناصر أخرى */
+  background-color: green; /* Background color */
+  color: white; /* Text color */
+  text-align: center; /* Center text within the footer */
+  font-size: 1.2rem; /* Text size */
+  width: 100%; /* Ensure it spans the full width */
+  height: 60px; /* Adjust height as needed */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  position: fixed; /* Fix the footer in place */
+  bottom: 0; /* Align it to the bottom */
+  left: 0; /* Ensure it spans the full width */
+  z-index: 1000; /* Ensure the footer appears above other elements */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  footer {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+    padding: 10px 0; /* Reduce padding */
   }
-  
-  /* تعديل الاستجابة للشاشات الصغيرة */
-  @media (max-width: 768px) {
-    footer {
-      font-size: 1rem; /* تصغير حجم النص للشاشات الصغيرة */
-      padding: 10px 0; /* تقليل المسافة الداخلية للـ footer */
-    }
+}
+@media (min-width: 1080px) and (min-height: 1920px) {
+  footer {
+    width: 1080px; /* Set width for specific resolution */
+    height: 80px; /* Adjust height if needed */
+    font-size: 1.2rem; /* Maintain font size */
   }
-  
+}

@@ -1,6 +1,18 @@
+/* Default navbar styles */
 .navbar-brand {
-  text-align: center; /* يضمن أن يتم توسيط النص ضمن الحاوية */
-  width: 100%; /* يجعل عرض العنصر 100% للتوسيط */
-  display: flex; /* استخدم flexbox */
-  justify-content: center; /* توسيط العنصر داخليًا */
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Adjust styles for a screen size of 1080x1920 pixels */
+@media (min-width: 1080px) and (min-height: 1920px) {
+  .navbar-brand {
+    font-size: 3rem; /* Increase the font size for larger screens */
+  }
+
+  .navbar {
+    height: 100vh; /* Make the navbar occupy the full height of the screen */
+  }
 }

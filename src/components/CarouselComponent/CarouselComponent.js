@@ -16,35 +16,35 @@ const CarouselComponent = () => (
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src="./img1.webp"
+          src="./A1.jpg"
           alt="Image 1"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src="./img3.jpg"
+          src="./A2.jpg"
           alt="Image 2"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src="./img5.jpg"
+          src="./A3.jpg"
           alt="Image 3"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src="./img7.webp"
+          src="./A4.jpg"
           alt="Image 4"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src="./img4.jpg"
+          src="./A5.jpg"
           alt="Image 5"
         />
       </Carousel.Item>

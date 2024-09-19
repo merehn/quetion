@@ -1,9 +1,7 @@
-/* QuestionsPage.css */
-
-/* إعدادات الصفحة بشكل عام */
+/* General page styling */
 .questions-page {
-  font-family: 'Amiri', serif; /* تطبيق الخط العربي التقليدي */
-  background-image: url('../../../public/image.jpg'); /* رابط الصورة الخلفية */
+  font-family: 'Amiri', serif; /* Apply traditional Arabic font */
+  background-image: url('../../../public/A.jpg'); /* Background image */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -13,9 +11,9 @@
   position: relative;
 }
 
-/* إضافة الـ overlay لتغميق الخلفية */
+/* Overlay for darkening the background */
 .overlay {
-  background: rgba(0, 0, 0, 0.6); /* Overlay نصف شفاف */
+  background: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -23,85 +21,115 @@
   left: 0;
 }
 
-/* تنسيق وعرض السؤال والاختيارات */
+/* Question container styling */
 .question-container {
-  background: rgba(245, 243, 243, 0.2); /* خلفية بيضاء شفافة قليلاً */
+  background: rgba(245, 243, 243, 0.2);
   border-radius: 15px;
   max-width: 600px;
   color: #fff;
   width: 90%;
-  padding: 20px; /* إضافة padding داخل المكون */
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding does not affect width */
 }
 
-/* إعدادات العناصر داخل القائمة */
+/* List item styling */
 .list-group-item {
-  background: rgba(216, 183, 183, 0.4); /* خلفية شفافة قليلاً */
+  background: rgba(216, 183, 183, 0.4);
   border: 1px solid #ddd;
   color: #fff;
-  transition: background 0.3s; /* إضافة تأثير عند التحويم */
-  cursor: pointer; /* تغيير مؤشر الفأرة عند التحويم */
+  transition: background 0.3s;
+  cursor: pointer;
 }
 
-/* تأثير التحويم */
 .list-group-item:hover {
   background: #3ff567;
 }
 
-/* تنسيق العنصر النشط */
 .list-group-item.active {
   background: #6e815b;
   color: white;
 }
 
-/* إعدادات الرسالة الارتجاعية */
+/* Feedback message styling */
 .feedback-message {
   font-size: 1.5rem;
   color: #fa0d0d;
 }
 
-/* التعديلات الاستجابية للشاشات الصغيرة */
-@media (max-width: 768px) {
+/* Footer styling */
+.footer {
+  width: 100%;
+  height: 150px; /* Adjust the height as needed */
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-content {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Specific adjustments for 1080x1920 resolution */
+@media (min-width: 1080px) and (min-height: 1920px) {
   .question-container {
-    padding: 15px; /* تقليل المسافة الداخلية للشاشات الأصغر */
+    padding: 30px;
+    width: 80%; /* Center and adjust width */
   }
 
   h2 {
-    font-size: 1.5rem; /* تصغير حجم النص للعنوان */
+    font-size: 2rem;
   }
 
   .list-group-item {
-    font-size: 1rem; /* تصغير حجم النص في الخيارات */
-    padding: 10px; /* تقليل الـ padding داخل الخيارات */
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .footer-content {
+    font-size: 1.8rem;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .question-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .list-group-item {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .footer-content {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .question-container {
-    padding: 10px; /* تقليل المسافة الداخلية للشاشات الأصغر */
+    padding: 10px;
   }
 
   h2 {
-    font-size: 1.2rem; /* تصغير حجم النص للعنوان */
+    font-size: 1.2rem;
   }
 
   .list-group-item {
-    font-size: 0.9rem; /* تصغير حجم النص في الخيارات */
-    padding: 8px; /* تقليل الـ padding داخل الخيارات */
-  }
-}
-
-/* التعديلات للشاشات الكبيرة */
-@media (min-width: 1080px) {
-  .question-container {
-    padding: 30px; /* زيادة المسافة الداخلية للشاشات الكبيرة */
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
-  h2 {
-    font-size: 2rem; /* تكبير حجم النص للعنوان */
-  }
-
-  .list-group-item {
-    font-size: 1.2rem; /* تكبير حجم النص في الخيارات */
-    padding: 15px; /* زيادة الـ padding داخل الخيارات */
+  .footer-content {
+    font-size: 1rem;
   }
 }

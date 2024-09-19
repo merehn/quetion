@@ -1,67 +1,48 @@
-/* CarouselComponent.css */
-
-/* إعدادات نص الـ Overlay */
+/* Overlay Text Settings */
 .carousel-text-overlay {
   position: absolute;
-  top: 70%; /* يضبط الموقع العمودي */
-  left: 40px; /* يضع النص على الجانب الأيسر */
+  top: 80%; /* Adjust vertical positioning */
+  left: 60px; /* Adjust distance from the left */
   transform: translateY(-50%);
-  color: rgba(135, 214, 159, 0.8); /* يجعل النص شفافًا بشكل بسيط */
-  font-size: 2rem;
+  color: rgba(135, 214, 159, 0.8);
+  font-size: 2.8rem; /* Increase text size for larger screens */
   font-weight: bold;
   z-index: 2;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* يضيف ظل للنص */
-  border: 1px solid rgba(204, 243, 216, 0.8); /* يضيف حدود شفافة */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(204, 243, 216, 0.8);
   border-radius: 50px;
-  padding: 10px 15px;
+  padding: 15px 20px;
   background-color: transparent;
+  max-width: 90%; /* Ensure the overlay doesn't exceed screen width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
-/* إعدادات النص للرابط داخل الـ Overlay */
+/* Link styling inside overlay */
 .carousel-text-overlay a {
   color: inherit;
   text-decoration: none;
 }
-
-/* إعدادات الصورة داخل الـ Carousel */
+/* Carousel Image Settings */
 .carousel-image {
   object-fit: cover;
-  height: 100vh; /* يأخذ كامل ارتفاع نافذة العرض */
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
 }
+@media (min-width: 1080px) and (min-height: 1920px) {
+  .carousel-text-overlay {
+    font-size: 3rem; /* Further increase text size for larger screens */
+    left: 80px; /* Adjust position from the left */
+  }
 
-/* الـ Media Queries لضبط شكل المكون على شاشات العرض المختلفة */
+  .carousel-image {
+    height: 100vh; /* Maintain full viewport height */
+    width: 100vw; /* Maintain full viewport width */
+  }
+}
 @media (max-width: 768px) {
   .carousel-text-overlay {
-    font-size: 1.5rem; /* يصغر حجم النص للعرض على الشاشات الأصغر */
-    left: 20px; /* يقلل من المسافة من الجانب الأيسر */
-    padding: 8px 12px; /* يقلل الحشو داخل الحدود */
-  }
-
-  .carousel-image {
-    height: 70vh; /* يقلل من ارتفاع الصور لتناسب الشاشات الأصغر */
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-text-overlay {
-    font-size: 1.2rem; /* يصغر حجم النص بشكل أكبر للشاشات الصغيرة */
-    left: 10px; /* يقلل المسافة أكثر من الجانب الأيسر */
-    padding: 5px 8px; /* يقلل الحشو بشكل أكبر */
-  }
-
-  .carousel-image {
-    height: 60vh; /* يقلل ارتفاع الصور أكثر للشاشات الصغيرة */
-  }
-}
-
-/* لضبط العرض على الشاشات الكبيرة مثل تلك التي في الصورة */
-@media (min-width: 1080px) {
-  .carousel-text-overlay {
-    font-size: 2.5rem; /* يكبر حجم النص للشاشات الكبيرة */
-    left: 50px; /* يزيد من المسافة من الجانب الأيسر */
-  }
-
-  .carousel-image {
-    height: 90vh; /* يجعل الصور تأخذ ارتفاع 90% من النافذة */
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+    left: 20px; /* Adjust left position for smaller screens */
+    padding: 10px 15px; /* Adjust padding */
   }
 }

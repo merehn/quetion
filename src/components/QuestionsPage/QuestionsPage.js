@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './QuestionsPage.css'; // Ensure this CSS file contains the custom styles
+import './QuestionsPage.css'; // Import custom styles
 
 const QuestionsPage = () => {
-  // Full list of questions
   const questions = [
     {
       question: "ما هو تاريخ اليوم الذي تحتفل المملكة به تحت مسمى اليوم الوطني؟",
@@ -92,12 +91,10 @@ const QuestionsPage = () => {
   const handleAnswerSelection = (index) => {
     setSelectedAnswer(index);
 
-    // Check if the selected answer is correct
     const isCorrect = index === questions[currentQuestionIndex].correct;
     setMessage(isCorrect ? 'إجابة صحيحة! أحسنت!' : 'إجابة خاطئة! حاول مرة أخرى!');
 
     if (!isCorrect) {
-      // End the quiz immediately if the answer is incorrect
       setConsolation(true);
       setQuizFinished(true);
       return;
@@ -143,6 +140,8 @@ const QuestionsPage = () => {
           </div>
         </div>
       )}
+
+     
     </div>
   );
 };
