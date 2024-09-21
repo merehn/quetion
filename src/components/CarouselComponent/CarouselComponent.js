@@ -16,7 +16,7 @@ const CarouselComponent = () => (
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src="./A1.jpg"
+          src="./A8.jpg"
           alt="Image 1"
         />
       </Carousel.Item>
